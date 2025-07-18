@@ -1,0 +1,32 @@
+[app]
+name = "filestore-bot"
+
+[[services]]
+name = "filestore-bot"
+type = "web"
+
+[services.build]
+type = "docker"
+dockerfile = "Dockerfile"
+
+[services.ports]
+port = 8001
+protocol = "http"
+
+[services.env]
+TG_BOT_TOKEN = { secret = "TG_BOT_TOKEN" }
+APP_ID = { secret = "APP_ID" }
+API_HASH = { secret = "API_HASH" }
+CHANNEL_ID = { secret = "CHANNEL_ID" }
+OWNER = { secret = "OWNER" }
+OWNER_ID = { secret = "OWNER_ID" }
+DATABASE_URL = { secret = "DATABASE_URL" }
+DATABASE_NAME = { secret = "DATABASE_NAME" }
+PORT = "8001"
+
+[services.health_checks]
+http = { path = "/", port = 8001 }
+
+[services.scaling]
+min = 1
+max = 1
