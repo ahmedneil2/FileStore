@@ -138,3 +138,27 @@ dmypy.json
 # Cython debug symbols
 cython_debug/
 
+# Telegram Bot specific
+*.session
+*.session-journal
+Bot.session
+Bot.session-journal
+
+# Log files
+filesharingbot.txt
+*.log
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+temp/
+tmp/
+
